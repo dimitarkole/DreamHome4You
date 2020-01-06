@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>..\..\Rules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.6.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.113" PrivateAssets="all">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DreamHouse4You.Common\DreamHouse4You.Common.csproj" />
+    <ProjectReference Include="..\..\Data\DreamHouse4You.Data.Common\DreamHouse4You.Data.Common.csproj" />
+    <ProjectReference Include="..\..\Data\DreamHouse4You.Data.Models\DreamHouse4You.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\DreamHouse4You.Data\DreamHouse4You.Data.csproj" />
+    <ProjectReference Include="..\..\Services\DreamHouse4You.Services.Data\DreamHouse4You.Services.Data.csproj" />
+    <ProjectReference Include="..\..\Services\DreamHouse4You.Services.Mapping\DreamHouse4You.Services.Mapping.csproj" />
+    <ProjectReference Include="..\..\Services\DreamHouse4You.Services.Messaging\DreamHouse4You.Services.Messaging.csproj" />
+    <ProjectReference Include="..\..\Services\DreamHouse4You.Services\DreamHouse4You.Services.csproj" />
+  </ItemGroup>
+
+</Project>
