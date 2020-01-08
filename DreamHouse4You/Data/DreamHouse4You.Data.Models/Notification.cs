@@ -8,6 +8,10 @@
 
     public class Notification : IAuditInfo, IDeletableEntity
     {
+        public string Id { get; set; }
+
+        public string Text { get; set; }
+
         public bool IsDeleted { get; set; }
 
         public DateTime? DeletedOn { get; set; }
