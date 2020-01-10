@@ -8,6 +8,16 @@
 
     public class House : IAuditInfo, IDeletableEntity
     {
+        /*public House(string tittle, string description, string uploadUserId, ApplicationUser uploadUser)
+        {
+            this.Id = Guid.NewGuid().ToString();
+            this.Tittle = tittle;
+            this.Description = description;
+            this.UploadUserId = uploadUserId;
+            this.UploadUser = uploadUser;
+            this.CreatedOn = DateTime.UtcNow;
+        }*/
+
         public string Id { get; set; }
 
         public string Tittle { get; set; }

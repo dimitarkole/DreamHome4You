@@ -4,14 +4,16 @@ using DreamHouse4You.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DreamHouse4You.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200110162848_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -199,6 +201,9 @@ namespace DreamHouse4You.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("ParentCategoryId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("StartOn")
                         .HasColumnType("datetime2");
 
@@ -211,6 +216,8 @@ namespace DreamHouse4You.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("IsDeleted");
+
+                    b.HasIndex("ParentCategoryId");
 
                     b.HasIndex("UserId");
 
@@ -475,6 +482,10 @@ namespace DreamHouse4You.Data.Migrations
 
             modelBuilder.Entity("DreamHouse4You.Data.Models.Event", b =>
                 {
+                    b.HasOne("DreamHouse4You.Data.Models.Category", "ParentCategory")
+                        .WithMany()
+                        .HasForeignKey("ParentCategoryId");
+
                     b.HasOne("DreamHouse4You.Data.Models.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");

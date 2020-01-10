@@ -6,24 +6,28 @@
 
     using DreamHouse4You.Data.Common.Models;
 
-    public class Notification : IAuditInfo, IDeletableEntity
+    public class Category : IAuditInfo, IDeletableEntity
     {
-/*        public Notification(string text, string userId, ApplicationUser user)
+
+      /*  public Category(string name, string userId)
         {
             this.Id = Guid.NewGuid().ToString();
-            this.Text = text;
+            this.Name = name;
             this.UserId = userId;
-            this.User = user;
             this.CreatedOn = DateTime.UtcNow;
         }
         */
         public string Id { get; set; }
 
-        public string Text { get; set; }
+        public string Name { get; set; }
 
         public string UserId { get; set; }
 
         public ApplicationUser User { get; set; }
+
+        public string ParentCategoryId { get; set; }
+
+        public Category? ParentCategory { get; set; }
 
         public bool IsDeleted { get; set; }
 

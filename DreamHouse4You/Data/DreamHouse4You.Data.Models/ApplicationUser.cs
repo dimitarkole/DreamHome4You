@@ -16,6 +16,11 @@ namespace DreamHouse4You.Data.Models
             this.Roles = new HashSet<IdentityUserRole<string>>();
             this.Claims = new HashSet<IdentityUserClaim<string>>();
             this.Logins = new HashSet<IdentityUserLogin<string>>();
+            /*this.Houses = new HashSet<House>();
+            this.Categories = new HashSet<Category>();
+            this.Events = new HashSet<Event>();
+            this.Notifications = new HashSet<Notification>();*/
+
         }
 
         // Audit info
@@ -33,5 +38,13 @@ namespace DreamHouse4You.Data.Models
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
 
         public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; }
+
+       /* public virtual ICollection<House> Houses { get; set; }
+
+        public virtual ICollection<Category> Categories { get; set; }
+
+        public virtual ICollection<Event> Events { get; set; }
+
+        public virtual ICollection<Notification> Notifications { get; set; }*/
     }
 }
