@@ -1,7 +1,7 @@
 ﻿namespace DreamHouse4You.Web.Areas.Administration.Controllers
 {
     using DreamHouse4You.Services.Data;
-    using DreamHouse4You.Web.ViewModels.Administration.Dashboard;
+    using DreamHouse4You.Web.Areas.Administration.ViewModels.Dashboard;
 
     using Microsoft.AspNetCore.Mvc;
 
