@@ -66,7 +66,7 @@
                     this.logger.LogInformation("User created a new account with password.");
 
                     var roleId = this.context.Roles.FirstOrDefault(r =>
-                        r.Name == "Administrator"
+                        r.Name == "User"
                         && r.DeletedOn == null).Id;
                     IdentityUserRole<string> userRole = new IdentityUserRole<string>()
                     {
