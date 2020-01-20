@@ -23,6 +23,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.435" />
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.0.96" />
@@ -42,5 +43,9 @@
     <ProjectReference Include="..\..\Services\DreamHouse4You.Services\DreamHouse4You.Services.csproj" />
     <ProjectReference Include="..\DreamHouse4You.Web.Infrastructure\DreamHouse4You.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\DreamHouse4You.Web.ViewModels\DreamHouse4You.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\User\ViewModels\" />
   </ItemGroup>
 </Project>

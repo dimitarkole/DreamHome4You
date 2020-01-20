@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Adding";
+}
+@model DreamHouse4You.Web.ViewModels.User.AddNewAdViewModel
+    <form asp-action="AddNewAd">
+        <!-- bradcam_area  -->
+        <div class="bradcam_area bradcam_bg_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="bradcam_text text-center">
+                            <h3>Adding new ad</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ bradcam_area  -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="AdHeading" class="control-label"></label>
+                        <input asp-for="AdHeading" class="form-control" />
+                        <span asp-validation-for="AdHeading" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Desctiption" class="control-label"></label>
+                        <input asp-for="Desctiption" class="form-control" />
+                        <span asp-validation-for="Desctiption" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SelectedCurrency" class="control-label"></label>
+                        <input asp-for="SelectedCurrency" class="form-control" />
+                        <span asp-validation-for="SelectedCurrency" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+
+
+                    <h1>Adding new ad</h1>
+                </div>
+            </div>
+
+        </div>
+
+    </form>

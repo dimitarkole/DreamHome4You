@@ -40,50 +40,49 @@
 <body>
 
     <header>
-         <div class="header-area ">
-             <div id="sticky-header" class="main-header-area">
-                 <div class="container">
-                     <div class="header_bottom_border">
-                         <div class="row align-items-center">
-                             <div class="col-xl-3 col-lg-2">
-                                 <div class="logo">
-                                     <a href="index.html">
-                                         <img src="img/logo.png" alt="">
-                                     </a>
-                                 </div>
-                             </div>
-                             <div class="col-xl-9 col-lg-10">
-                                 <div class="main-menu  d-none d-lg-block">
-                                     <nav>
-                                         <ul id="navigation">
-                                             <li><a class="active" href="index.html">home</a></li>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-3 col-lg-2">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="~/img/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-9 col-lg-10">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li>
+                                                <a asp-area="" asp-controller="Home" asp-action="Index">Add new ad</a>
 
-                                             <li><a href="contact.html">Contact</a></li>
-                                             <partial name="_LoginPartial" />
 
-                                         </ul>
-                                     </nav>
-                                 </div>
-                             </div>
-                             <div class="col-12">
-                                 <div class="mobile_menu d-block d-lg-none"></div>
-                             </div>
-                         </div>
-                     </div>
+                                            </li>
 
-                 </div>
-             </div>
-         </div>
-     </header> 
+                                            <partial name="_LoginPartial" />
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
     <!-- header-end -->
-
- 
-
-    
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @this.RenderBody()
-        </main>
+    <!--<partial name="_CookieConsentPartial" />-->
+    <main role="main" class="pb-3">
+        @this.RenderBody()
+    </main>
 
 
     <footer class="border-top footer text-muted">

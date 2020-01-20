@@ -36,7 +36,7 @@
         public double Price { get; set; }
 
         // ToDo: PriceValue enum type
-        public string PriceValue { get; set; }
+        public string Currency { get; set; }
 
         public string MainPicture { get; set; }
 
