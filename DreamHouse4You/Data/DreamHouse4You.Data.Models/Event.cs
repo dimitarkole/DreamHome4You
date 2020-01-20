@@ -8,15 +8,12 @@
 
     public class Event : IAuditInfo, IDeletableEntity
     {
-        /*public Event(string text, string userId, DateTime startOn, DateTime finishOn)
+        public Event()
         {
             this.Id = Guid.NewGuid().ToString();
-            this.Text = text;
-            this.UserId = userId;
+            this.IsDeleted = false;
             this.CreatedOn = DateTime.UtcNow;
-            this.StartOn = startOn;
-            this.FinishOn = finishOn;
-        }*/
+        }
 
         public string Id { get; set; }
 

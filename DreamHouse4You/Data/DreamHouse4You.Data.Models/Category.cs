@@ -9,14 +9,13 @@
     public class Category : IAuditInfo, IDeletableEntity
     {
 
-      /*  public Category(string name, string userId)
+        public Category()
         {
             this.Id = Guid.NewGuid().ToString();
-            this.Name = name;
-            this.UserId = userId;
+            this.IsDeleted = false;
             this.CreatedOn = DateTime.UtcNow;
         }
-        */
+
         public string Id { get; set; }
 
         public string Name { get; set; }

@@ -8,15 +8,13 @@
 
     public class Notification : IAuditInfo, IDeletableEntity
     {
-/*        public Notification(string text, string userId, ApplicationUser user)
+        public Notification()
         {
             this.Id = Guid.NewGuid().ToString();
-            this.Text = text;
-            this.UserId = userId;
-            this.User = user;
+            this.IsDeleted = false;
             this.CreatedOn = DateTime.UtcNow;
         }
-        */
+
         public string Id { get; set; }
 
         public string Text { get; set; }
