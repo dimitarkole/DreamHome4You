@@ -14,6 +14,13 @@
   <PropertyGroup>
     <CodeAnalysisRuleSet>..\..\Rules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\User\ViewModels\**" />
+    <Content Remove="Areas\User\ViewModels\**" />
+    <EmbeddedResource Remove="Areas\User\ViewModels\**" />
+    <None Remove="Areas\User\ViewModels\**" />
+  </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\..\stylecop.json" />
   </ItemGroup>
@@ -43,9 +50,5 @@
     <ProjectReference Include="..\..\Services\DreamHouse4You.Services\DreamHouse4You.Services.csproj" />
     <ProjectReference Include="..\DreamHouse4You.Web.Infrastructure\DreamHouse4You.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\DreamHouse4You.Web.ViewModels\DreamHouse4You.Web.ViewModels.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\User\ViewModels\" />
   </ItemGroup>
 </Project>
