@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
@@ -16,6 +16,12 @@
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.113" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\DreamHouse4You.Data.Models\DreamHouse4You.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\DreamHouse4You.Data\DreamHouse4You.Data.csproj" />
+    <ProjectReference Include="..\..\Web\DreamHouse4You.Web.ViewModels\DreamHouse4You.Web.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>
