@@ -8,6 +8,8 @@
     using DreamHouse4You.Data.Models;
     using DreamHouse4You.Data.Repositories;
     using DreamHouse4You.Data.Seeding;
+    using DreamHouse4You.Services.AdminAccount.Access;
+    using DreamHouse4You.Services.Contracts.AdminAccount.Access;
     using DreamHouse4You.Services.Data;
     using DreamHouse4You.Services.Mapping;
     using DreamHouse4You.Services.Messaging;
@@ -59,6 +61,13 @@
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<ISettingsService, SettingsService>();
+
+            // Admin services
+            services.AddTransient<IAddCategoryService, AddCategoryService>();
+
+            // Common Resorces services
+            services.AddTransient<INotificationServices, NotificationServices>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
