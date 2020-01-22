@@ -9,7 +9,9 @@
     using DreamHouse4You.Data.Repositories;
     using DreamHouse4You.Data.Seeding;
     using DreamHouse4You.Services.AdminAccount.Access;
+    using DreamHouse4You.Services.CommonResorces;
     using DreamHouse4You.Services.Contracts.AdminAccount.Access;
+    using DreamHouse4You.Services.Contracts.CommonResorces;
     using DreamHouse4You.Services.Data;
     using DreamHouse4You.Services.Mapping;
     using DreamHouse4You.Services.Messaging;
