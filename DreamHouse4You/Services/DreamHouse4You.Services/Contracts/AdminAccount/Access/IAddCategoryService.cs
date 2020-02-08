@@ -8,6 +8,6 @@
 
     public interface IAddCategoryService
     {
-        public string AddNewCategory(AddCategoryViewModel model);
+        public string AddNewCategory(AddCategoryViewModel model, string userId);
     }
 }

@@ -15,15 +15,18 @@
         <li class="nav-item">
             <a asp-area="Administration" asp-controller="Dashboard" asp-action="Index" title="Admin">Admin</a>
         </li>
+        <li class="nav-item">
+            <a asp-area="Administration" asp-controller="AddCategory" asp-action="Index" title="Add Category">Add Category</a>
+        </li>
     }
     else if (this.User.IsInRole(GlobalConstants.UserRoleName))
     {
-<li class="Appointment">
-    <div class="book_btn d-none d-lg-block">
-        <a asp-area="User" asp-controller="Access" asp-action="Adding">Add new ad</a>
+        <li class="Appointment">
+            <div class="book_btn d-none d-lg-block">
+                <a asp-area="User" asp-controller="Access" asp-action="Adding">Add new ad</a>
 
-    </div>
-</li>
+            </div>
+        </li>
 
         <li class="nav-item">
             <a asp-area="User" asp-controller="Access" asp-action="Adding">Index</a>

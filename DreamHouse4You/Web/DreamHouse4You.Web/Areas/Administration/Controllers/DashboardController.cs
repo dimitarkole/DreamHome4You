@@ -1,5 +1,6 @@
 ﻿namespace DreamHouse4You.Web.Areas.Administration.Controllers
 {
+    using DreamHouse4You.Services.Contracts.AdminAccount.Access;
     using DreamHouse4You.Services.Data;
     using DreamHouse4You.Web.Areas.Administration.ViewModels.Dashboard;
 
@@ -9,7 +10,8 @@
     {
         private readonly ISettingsService settingsService;
 
-        public DashboardController(ISettingsService settingsService)
+
+        public DashboardController(ISettingsService settingsService, IAddCategoryService addCategoryService) : base(addCategoryService)
         {
             this.settingsService = settingsService;
         }
