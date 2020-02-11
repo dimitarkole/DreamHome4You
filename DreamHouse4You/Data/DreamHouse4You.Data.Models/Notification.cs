@@ -27,6 +27,8 @@
 
         public DateTime? DeletedOn { get; set; }
 
+        public DateTime? SeenOn { get; set; }
+
         public DateTime CreatedOn { get; set; }
 
         public DateTime? ModifiedOn { get; set; }
