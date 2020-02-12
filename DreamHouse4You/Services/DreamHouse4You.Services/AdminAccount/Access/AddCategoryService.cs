@@ -8,16 +8,21 @@
     using DreamHouse4You.Data;
     using DreamHouse4You.Data.Models;
     using DreamHouse4You.Services.Contracts.AdminAccount.Access;
+    using DreamHouse4You.Services.Contracts.CommonResorces;
     using DreamHouse4You.Web.ViewModels.Administration.Access;
 
     public class AddCategoryService : IAddCategoryService
     {
         private readonly ApplicationDbContext context;
+        private readonly ICategoryService categoryService;
+
 
         public AddCategoryService(
-            ApplicationDbContext context)
+            ApplicationDbContext context,
+            ICategoryService categoryService)
         {
             this.context = context;
+            this.categoryService = categoryService;
         }
 
         public string AddNewCategory(AddCategoryViewModel model, string userId)
@@ -30,6 +35,16 @@
             }
 
             return result;
+        }
+
+        public AddCategoryViewModel PreperedPage()
+        {
+            var categories = this.categoryService.GetCategories();
+            var model = new AddCategoryViewModel()
+            {
+                ParentCategorys = categories,
+            };
+            return model;
         }
 
         private void AddCategoryAtDB(AddCategoryViewModel model, string userId)

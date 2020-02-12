@@ -6,6 +6,7 @@
     using System.Threading.Tasks;
     using DreamHouse4You.Data.Models;
     using DreamHouse4You.Services.Contracts.AdminAccount.Access;
+    using DreamHouse4You.Services.Contracts.CommonResorces;
     using DreamHouse4You.Services.Data;
     using DreamHouse4You.Services.Messaging;
     using DreamHouse4You.Web.ViewModels.Administration.Access;
@@ -15,14 +16,14 @@
 
     public class AddCategoryController : AdministrationController
     {
-        public AddCategoryController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IEmailSender emailSender, ILogger<AccountController> logger, IAddCategoryService addCategoryService, ISettingsService settingsService) : base(userManager, signInManager, emailSender, logger, addCategoryService, settingsService)
+        public AddCategoryController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IEmailSender emailSender, ILogger<AccountController> logger, IAddCategoryService addCategoryService, ISettingsService settingsService, ICategoryService categoryServices) : base(userManager, signInManager, emailSender, logger, addCategoryService, settingsService, categoryServices)
         {
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            AddCategoryViewModel model = new AddCategoryViewModel();
+            var model = this.addCategoryService.PreperedPage();
             return this.View(model);
         }
 
@@ -30,7 +31,7 @@
         public IActionResult Index(AddCategoryViewModel model)
         {
             var result = this.addCategoryService.AddNewCategory(model, this.userId); ;
-            //AddCategoryViewModel model = new AddCategoryViewModel();
+            this.ViewData["message"] = result;
             return this.View(model);
         }
     }

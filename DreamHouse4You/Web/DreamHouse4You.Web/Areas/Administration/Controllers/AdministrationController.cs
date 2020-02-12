@@ -25,6 +25,9 @@
         protected readonly IAddCategoryService addCategoryService;
         protected readonly INotificationServices notificationServices;
         protected readonly ISettingsService settingsService;
+        protected readonly ICategoryService categoryServices;
+
+
         protected string userId;
 
         public AdministrationController(UserManager<ApplicationUser> userManager,
@@ -32,7 +35,8 @@
             IEmailSender emailSender,
             ILogger<AccountController> logger,
             IAddCategoryService addCategoryService,
-            ISettingsService settingsService)
+            ISettingsService settingsService,
+            ICategoryService categoryServices)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -40,12 +44,13 @@
             this.logger = logger;
             this.addCategoryService = addCategoryService;
             this.settingsService = settingsService;
+            this.categoryServices = categoryServices;
         }
 
         protected void StarUp()
         {
             this.userId = this.userManager.GetUserId(this.User);
-            var messages = this.notificationServices.AddNotification(this.userId);
+            //var messages = this.notificationServices(this.userId);
             //this.ViewData["MessageNavBar"] = messages;
         }
     }

@@ -68,8 +68,8 @@
             services.AddTransient<IAddCategoryService, AddCategoryService>();
 
             // Common Resorces services
-            services.AddTransient<INotificationServices, NotificationServices>();
-
+            services.AddTransient<INotificationServices, NotificationService>();
+            services.AddTransient<ICategoryService, CategoryServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

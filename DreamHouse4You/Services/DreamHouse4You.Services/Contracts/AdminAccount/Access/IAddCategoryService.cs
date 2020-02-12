@@ -9,5 +9,8 @@
     public interface IAddCategoryService
     {
         public string AddNewCategory(AddCategoryViewModel model, string userId);
+
+        public AddCategoryViewModel PreperedPage();
+
     }
 }

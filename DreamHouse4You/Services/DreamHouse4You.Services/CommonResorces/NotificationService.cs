@@ -10,11 +10,11 @@
     using DreamHouse4You.Services.Contracts.CommonResorces;
     using DreamHouse4You.Web.ViewModels.CommonResorces;
 
-    public class NotificationServices : INotificationServices
+    public class NotificationService : INotificationServices
     {
         private readonly ApplicationDbContext context;
 
-        public NotificationServices(
+        public NotificationService(
             ApplicationDbContext context)
         {
             this.context = context;

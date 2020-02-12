@@ -2,6 +2,7 @@
 {
     using DreamHouse4You.Data.Models;
     using DreamHouse4You.Services.Contracts.AdminAccount.Access;
+    using DreamHouse4You.Services.Contracts.CommonResorces;
     using DreamHouse4You.Services.Data;
     using DreamHouse4You.Services.Messaging;
     using DreamHouse4You.Web.Areas.Administration.ViewModels.Dashboard;
@@ -11,7 +12,7 @@
 
     public class DashboardController : AdministrationController
     {
-        public DashboardController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IEmailSender emailSender, ILogger<AccountController> logger, IAddCategoryService addCategoryService, ISettingsService settingsService) : base(userManager, signInManager, emailSender, logger, addCategoryService, settingsService)
+        public DashboardController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IEmailSender emailSender, ILogger<AccountController> logger, IAddCategoryService addCategoryService, ISettingsService settingsService, ICategoryService categoryServices) : base(userManager, signInManager, emailSender, logger, addCategoryService, settingsService, categoryServices)
         {
         }
 
