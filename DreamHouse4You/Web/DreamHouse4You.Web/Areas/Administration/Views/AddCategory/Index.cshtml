@@ -18,15 +18,15 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SelectedParentCategoryId" class="control-label  col-md-2">Жанр</label>
+                <label asp-for="SelectedParentCategoryId" class="control-label">Жанр</label>
 
-                <select asp-for="SelectedParentCategoryId" class="col-md-6">
+                <select asp-for="SelectedParentCategoryId">
                     @foreach (var category in Model.ParentCategorys.Categories)
                     {
                         <option value="@category.Id">@category.Name</option>
                     }
                 </select>
-                <span asp-validation-for="SelectedParentCategoryId" class="text-danger col-md-4"></span>
+                <span asp-validation-for="SelectedParentCategoryId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

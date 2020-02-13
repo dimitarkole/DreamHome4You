@@ -66,6 +66,8 @@
 
             // Admin services
             services.AddTransient<IAddCategoryService, AddCategoryService>();
+            services.AddTransient<IAddedCategoriesService, AddedCategoriesService>();
+
 
             // Common Resorces services
             services.AddTransient<INotificationServices, NotificationService>();

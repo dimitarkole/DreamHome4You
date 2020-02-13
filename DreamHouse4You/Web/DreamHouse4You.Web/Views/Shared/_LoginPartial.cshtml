@@ -18,6 +18,9 @@
         <li class="nav-item">
             <a asp-area="Administration" asp-controller="AddCategory" asp-action="Index" title="Add Category">Add Category</a>
         </li>
+        <li class="nav-item">
+            <a asp-area="Administration" asp-controller="AddedCategory" asp-action="Index" title="Added Category">All Add Category</a>
+        </li>
     }
     else if (this.User.IsInRole(GlobalConstants.UserRoleName))
     {

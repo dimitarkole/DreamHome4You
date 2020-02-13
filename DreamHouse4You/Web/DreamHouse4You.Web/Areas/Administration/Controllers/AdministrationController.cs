@@ -23,6 +23,8 @@
         private readonly ILogger logger;
 
         protected readonly IAddCategoryService addCategoryService;
+        protected readonly IAddedCategoriesService addedCategoriesService;
+
         protected readonly INotificationServices notificationServices;
         protected readonly ISettingsService settingsService;
         protected readonly ICategoryService categoryServices;
@@ -36,7 +38,8 @@
             ILogger<AccountController> logger,
             IAddCategoryService addCategoryService,
             ISettingsService settingsService,
-            ICategoryService categoryServices)
+            ICategoryService categoryServices,
+            IAddedCategoriesService addedCategoriesService)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -44,6 +47,7 @@
             this.logger = logger;
             this.addCategoryService = addCategoryService;
             this.settingsService = settingsService;
+            this.addedCategoriesService = addedCategoriesService;
             this.categoryServices = categoryServices;
         }
 
