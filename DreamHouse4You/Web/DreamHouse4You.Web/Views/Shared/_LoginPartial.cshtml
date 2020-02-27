@@ -8,33 +8,37 @@
 @if (this.SignInManager.IsSignedIn(this.User))
 {
     <li class="nav-item">
-        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Profile">@(this.User.Identity.Name)!</a>
-    </li>
-    if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
-    {
-        <li class="nav-item">
-            <a asp-area="Administration" asp-controller="Dashboard" asp-action="Index" title="Admin">Admin</a>
-        </li>
-        <li class="nav-item">
-            <a asp-area="Administration" asp-controller="AddCategory" asp-action="Index" title="Add Category">Add Category</a>
-        </li>
-        <li class="nav-item">
-            <a asp-area="Administration" asp-controller="AddedCategory" asp-action="Index" title="Added Category">All Add Category</a>
-        </li>
+        <a>@(this.User.Identity.Name)! <i class="ti-angle-down"></i></a>
+
+        @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+        {
+            <ul class="submenu">
+                <li>
+                    <a asp-area="Administration" asp-controller="AddCategory" asp-action="Index" title="Add Category">Add Category</a>
+                </li>
+                <li>
+                    <a asp-area="Administration" asp-controller="AddedCategory" asp-action="Index" title="Added Category">All Add Category</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-area="Administration" asp-controller="Dashboard" asp-action="Index" title="Admin">Admin</a>
+                </li>
+            </ul>
+   
     }
     else if (this.User.IsInRole(GlobalConstants.UserRoleName))
     {
-        <li class="Appointment">
-            <div class="book_btn d-none d-lg-block">
-                <a asp-area="User" asp-controller="Access" asp-action="Adding">Add new ad</a>
+    <li class="Appointment">
+        <div class="book_btn d-none d-lg-block">
+            <a asp-area="User" asp-controller="Access" asp-action="Adding">Add new ad</a>
 
-            </div>
-        </li>
+        </div>
+    </li>
 
-        <li class="nav-item">
-            <a asp-area="User" asp-controller="Access" asp-action="Adding">Index</a>
-        </li>
+    <li class="nav-item">
+        <a asp-area="User" asp-controller="Access" asp-action="Adding">Index</a>
+    </li>
     }
+    </li>
 
     <li class="nav-item">
         <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@(this.Url.Action("Index", "Home", new { area = string.Empty }))">
