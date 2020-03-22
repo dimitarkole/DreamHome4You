@@ -7,51 +7,53 @@
 
 @if (this.SignInManager.IsSignedIn(this.User))
 {
-    <li class="nav-item">
-        <a>@(this.User.Identity.Name)! <i class="ti-angle-down"></i></a>
+    <li class="nav-item text-dark">
+        <a class="nav-link text-dark">@(this.User.Identity.Name)! <i class="ti-angle-down"></i></a>
 
         @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
         {
             <ul class="submenu">
-                <li>
-                    <a asp-area="Administration" asp-controller="AddCategory" asp-action="Index" title="Add Category">Add Category</a>
-                </li>
-                <li>
-                    <a asp-area="Administration" asp-controller="AddedCategory" asp-action="Index" title="Added Category">All Add Category</a>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="Administration" asp-controller="AddCategory" asp-action="Index" title="Add Category">Добави категори</a>
                 </li>
                 <li class="nav-item">
-                    <a asp-area="Administration" asp-controller="Dashboard" asp-action="Index" title="Admin">Admin</a>
+                    <a class="nav-link text-dark" asp-area="Administration" asp-controller="AllAddedCategoties" asp-action="Index" title="Added Category">Всички категории</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="Administration" asp-controller="Dashboard" asp-action="Index" title="Admin">Admin</a>
                 </li>
             </ul>
    
-    }
-    else if (this.User.IsInRole(GlobalConstants.UserRoleName))
-    {
-    <li class="Appointment">
-        <div class="book_btn d-none d-lg-block">
-            <a asp-area="User" asp-controller="Access" asp-action="Adding">Add new ad</a>
+        }
+        else if (this.User.IsInRole(GlobalConstants.UserRoleName))
+        {
+            <li class="Appointment">
+                <div class="book_btn d-none d-lg-block">
+                    <a class="nav-link text-dark" asp-area="User" asp-controller="Access" asp-action="Adding">Add new ad</a>
 
-        </div>
-    </li>
+                </div>
+            </li>
 
-    <li class="nav-item">
-        <a asp-area="User" asp-controller="Access" asp-action="Adding">Index</a>
-    </li>
-    }
+            <li class="nav-item">
+                <a class="nav-link text-dark"  asp-area="User" asp-controller="Access" asp-action="Adding">Index</a>
+            </li>
+        }
     </li>
 
     <li class="nav-item">
         <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@(this.Url.Action("Index", "Home", new { area = string.Empty }))">
-            <button type="submit" class="btn" style="color:white">Logout</button>
+            <button type="submit" class="btn nav-link text-dark" style="color:white">Изход</button>
         </form>
     </li>
 }
 else
 {
-    <li class="Appointment">
-        <div class="book_btn d-none d-lg-block">
-            <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">My account</a>
-        </div>
+<li class="nav-item">
+    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Вход</a>
 
-    </li>
+</li>
+<li class="nav-item">
+    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Regiistration">Рергистрация</a>
+
+</li>
 }

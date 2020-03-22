@@ -1,4 +1,4 @@
-﻿namespace DreamHouse4You.Web.ViewModels.Administration.Access
+﻿namespace DreamHouse4You.Web.ViewModels.Administration.Category
 {
     using DreamHouse4You.Web.ViewModels.CommonResorces;
     using System;

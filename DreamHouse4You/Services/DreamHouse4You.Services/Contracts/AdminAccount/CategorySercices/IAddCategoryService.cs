@@ -1,10 +1,10 @@
-﻿namespace DreamHouse4You.Services.Contracts.AdminAccount.Access
+﻿namespace DreamHouse4You.Services.Contracts.AdminAccount.CategorySercices
 { 
     using System;
     using System.Collections.Generic;
     using System.Text;
 
-    using DreamHouse4You.Web.ViewModels.Administration.Access;
+    using DreamHouse4You.Web.ViewModels.Administration.Category;
 
     public interface IAddCategoryService
     {

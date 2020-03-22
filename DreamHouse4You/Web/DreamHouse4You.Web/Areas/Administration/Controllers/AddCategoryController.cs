@@ -5,11 +5,11 @@
     using System.Linq;
     using System.Threading.Tasks;
     using DreamHouse4You.Data.Models;
-    using DreamHouse4You.Services.Contracts.AdminAccount.Access;
+    using DreamHouse4You.Services.Contracts.AdminAccount.CategorySercices;
     using DreamHouse4You.Services.Contracts.CommonResorces;
     using DreamHouse4You.Services.Data;
     using DreamHouse4You.Services.Messaging;
-    using DreamHouse4You.Web.ViewModels.Administration.Access;
+    using DreamHouse4You.Web.ViewModels.Administration.Category;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;

@@ -8,9 +8,9 @@
     using DreamHouse4You.Data.Models;
     using DreamHouse4You.Data.Repositories;
     using DreamHouse4You.Data.Seeding;
-    using DreamHouse4You.Services.AdminAccount.Access;
+    using DreamHouse4You.Services.AdminAccount.CategorySercices;
     using DreamHouse4You.Services.CommonResorces;
-    using DreamHouse4You.Services.Contracts.AdminAccount.Access;
+    using DreamHouse4You.Services.Contracts.AdminAccount.CategorySercices;
     using DreamHouse4You.Services.Contracts.CommonResorces;
     using DreamHouse4You.Services.Data;
     using DreamHouse4You.Services.Mapping;

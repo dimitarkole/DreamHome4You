@@ -1,4 +1,4 @@
-﻿namespace DreamHouse4You.Services.AdminAccount.Access
+﻿namespace DreamHouse4You.Services.AdminAccount.CategorySercices
 {
     using System;
     using System.Collections.Generic;
@@ -7,15 +7,14 @@
 
     using DreamHouse4You.Data;
     using DreamHouse4You.Data.Models;
-    using DreamHouse4You.Services.Contracts.AdminAccount.Access;
+    using DreamHouse4You.Services.Contracts.AdminAccount.CategorySercices;
     using DreamHouse4You.Services.Contracts.CommonResorces;
-    using DreamHouse4You.Web.ViewModels.Administration.Access;
+    using DreamHouse4You.Web.ViewModels.Administration.Category;
 
     public class AddCategoryService : IAddCategoryService
     {
         private readonly ApplicationDbContext context;
         private readonly ICategoryService categoryService;
-
 
         public AddCategoryService(
             ApplicationDbContext context,
@@ -27,11 +26,11 @@
 
         public string AddNewCategory(AddCategoryViewModel model, string userId)
         {
-            var result = "Category dublicat with other category!";
+            var result = "Категорията се доблира с друга категория!";
             if (this.IsDublicateCategory(model) == false)
             {
                 this.AddCategoryAtDB(model, userId);
-                result = "Category is added successfull!";
+                result = "Категорията е добавена успешно!";
             }
 
             return result;
@@ -50,7 +49,7 @@
         private void AddCategoryAtDB(AddCategoryViewModel model, string userId)
         {
             var parentCategory = this.context.Categories.FirstOrDefault(c => c.Id == model.SelectedParentCategoryId);
-            var user = this.context.Users.Find(userId);
+            var user = this.context.Users.Find(userId); 
             Category category = new Category()
             {
                 User = user,
