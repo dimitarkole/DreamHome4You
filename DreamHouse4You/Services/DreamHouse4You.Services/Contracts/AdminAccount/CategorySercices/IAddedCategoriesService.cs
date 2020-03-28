@@ -13,5 +13,10 @@
         public AddedCategoriesViewModel GetAllAddedCategories(AddedCategoriesViewModel model);
 
         public AddedCategoriesViewModel ChangeActivePage(AddedCategoriesViewModel model, int id);
+
+        AddCategoryViewModel GetCategoryData(string categoryId);
+
+        AddedCategoriesViewModel DeleteCategory(string userId, AddedCategoriesViewModel model, string categoryId);
+
     }
 }

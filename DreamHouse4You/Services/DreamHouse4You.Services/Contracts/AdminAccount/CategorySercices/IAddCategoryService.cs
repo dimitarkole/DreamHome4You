@@ -1,5 +1,5 @@
 ﻿namespace DreamHouse4You.Services.Contracts.AdminAccount.CategorySercices
-{ 
+{
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -9,6 +9,8 @@
     public interface IAddCategoryService
     {
         public string AddNewCategory(AddCategoryViewModel model, string userId);
+
+        public Dictionary<string, object> EditCategory(AddCategoryViewModel model, string categoryId, string userId);
 
         public AddCategoryViewModel PreperedPage();
 

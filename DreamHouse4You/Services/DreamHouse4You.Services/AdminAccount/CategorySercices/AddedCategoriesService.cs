@@ -73,6 +73,43 @@
 
         }
 
+        public AddCategoryViewModel GetCategoryData(string categoryId)
+        {
+            var category = this.context.Categories.FirstOrDefault(c => c.Id == categoryId);
+            var allCategory = this.context.Categories
+                .Where(c => c.Id != categoryId)
+                .Select(c => new CategoryViewModel()
+                {
+                    Name = c.Name,
+                    Id = c.Name,
+                    ParentId = c.ParentCategoryId,
+                    ParentName = c.ParentCategory.Name,
+                }).ToList();
+            CategoriesViewModel categories = new CategoriesViewModel()
+            {
+                Categories = allCategory,
+            };
+
+
+            var model = new AddCategoryViewModel()
+            {
+                Name = category.Name,
+                ParentCategories = categories,
+                SelectedParentCategoryId = category.ParentCategoryId,
+            };
+
+            return model;
+        }
+
+        public AddedCategoriesViewModel DeleteCategory(string userId, AddedCategoriesViewModel model, string categoryId)
+        {
+            var category = this.context.Categories.FirstOrDefault(c => c.Id == categoryId);
+            category.DeletedOn = DateTime.UtcNow;
+            this.context.SaveChanges();
+
+            return this.PreparedPage();
+        }
+
         private IQueryable<CategoryViewModel> SortGenres(
             string sortMethodId,
             IQueryable<CategoryViewModel> categories)
@@ -100,5 +137,7 @@
 
             return categories;
         }
+
+     
     }
 }

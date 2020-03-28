@@ -14,14 +14,14 @@
 
         public AddCategoryViewModel(CategoriesViewModel parentCategorys)
         {
-            this.ParentCategorys = parentCategorys;
+            this.ParentCategories = parentCategorys;
         }
 
         public string Name { get; set; }
 
         public string SelectedParentCategoryId { get; set; }
 
-        public CategoriesViewModel ParentCategorys { get; set; }
+        public CategoriesViewModel ParentCategories { get; set; }
 
     }
 }

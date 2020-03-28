@@ -51,7 +51,7 @@
             this.categoryServices = categoryServices;
         }
 
-        protected void StarUp()
+        protected void StartUp()
         {
             this.userId = this.userManager.GetUserId(this.User);
             //var messages = this.notificationServices(this.userId);

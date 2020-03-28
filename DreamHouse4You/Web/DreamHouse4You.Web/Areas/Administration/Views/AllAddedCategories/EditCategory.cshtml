@@ -3,22 +3,20 @@
 @{
     ViewData["Title"] = "Index";
 }
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             @if (ViewData["message"] != null)
             {
                 <div class="alert alert-info" role="alert">
-
                     @ViewData["message"]
                 </div>
             }
         </div>
-    </div>
+     </div>
     <div class="row">
         <div class="col-md-4">
-            <form asp-action="Index">
+            <form asp-action="EditingCategory">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Name" class="control-label">Име</label>
@@ -37,10 +35,10 @@
                     <span asp-validation-for="SelectedParentCategoryId" class="text-danger"></span>
                 </div>
                 <div class="form-group ">
-                        <input type="submit" value="Добави" class="genric-btn primary circle" />
+                    <input type="submit" value="Добави" class="genric-btn primary circle" />
 
                 </div>
             </form>
         </div>
     </div>
-</div>
+ </div>
